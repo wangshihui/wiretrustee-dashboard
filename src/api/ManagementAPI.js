@@ -3,11 +3,12 @@ import {getConfig} from "../config";
 const {apiOrigin} = getConfig();
 
 export const callApi = async (method, headers, body, getAccessTokenSilently, endpoint) => {
-    const token = await getAccessTokenSilently();
+    console.log("getAccessTokenSilently....")
+    // const token = await getAccessTokenSilently();
     if (!headers) {
         headers = {}
     }
-    headers.Authorization = `Bearer ${token}`
+    // headers.Authorization = `Bearer ${token}`
     const requestOptions = {
         method: method,
         headers: headers,

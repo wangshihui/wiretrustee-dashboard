@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {useAuth0, withAuthenticationRequired} from "@auth0/auth0-react";
+// import {useAuth0, withAuthenticationRequired} from "@auth0/auth0-react";
 import Loading from "../components/Loading";
 import {getSetupKeys} from "../api/ManagementAPI";
 import AddPeerTabSelector from "../components/addpeer/AddPeerTabSelector";
@@ -12,10 +12,10 @@ export const AddPeerComponent = () => {
         const [error, setError] = useState(null)
         const [selectedKey, setSelectedKey] = useState(null)
 
-        const {
-            getAccessTokenSilently,
-        } = useAuth0();
-
+        // const {
+        //     getAccessTokenSilently,
+        // } = useAuth0();
+        const    getAccessTokenSilently=()=>{}
         const handleError = error => {
             console.error('Error to fetch data:', error);
             setLoading(false)
@@ -62,8 +62,9 @@ export const AddPeerComponent = () => {
     }
 ;
 
-export default withAuthenticationRequired(AddPeerComponent,
-    {
-        onRedirecting: () => <Loading/>,
-    }
-);
+// export default withAuthenticationRequired(AddPeerComponent,
+//     {
+//         onRedirecting: () => <Loading/>,
+//     }
+// );
+export default AddPeerComponent;

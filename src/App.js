@@ -3,7 +3,7 @@ import Navbar from './components/Navbar';
 import {Redirect, Route, Switch} from 'react-router-dom';
 import Peers from './views/Peers';
 import Footer from './components/Footer';
-import {useAuth0} from "@auth0/auth0-react";
+// import {useAuth0} from "@auth0/auth0-react";
 import Loading from "./components/Loading";
 import SetupKeys from "./views/SetupKeys";
 import AddPeer from "./views/AddPeer";
@@ -17,7 +17,18 @@ function App() {
         isAuthenticated,
         loginWithRedirect,
         error
-    } = useAuth0();
+    } = {
+        isLoading:false,
+        error:false,
+        isAuthenticated:false,
+        loginWithRedirect:false
+    };
+    // const {
+    //     isLoading,
+    //     isAuthenticated,
+    //     loginWithRedirect,
+    //     error
+    // } = useAuth0();
 
     const [isOpen, setIsOpen] = useState(false);
 
@@ -49,11 +60,12 @@ function App() {
     }
 
     if (!isAuthenticated) {
-        loginWithRedirect({})
+        console.log("ignore login.....")
+        // loginWithRedirect({})
     }
 
     return (
-        isAuthenticated && (
+         (
             <>
 
                 {/*<div className='h-screen flex justify-center items-center bg-green-400'>*/}

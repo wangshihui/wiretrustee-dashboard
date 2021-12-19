@@ -1,5 +1,5 @@
 FROM alpine:3.14
-
+RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories
 RUN apk add --no-cache bash curl less ca-certificates git tzdata zip gettext \
     nginx curl supervisor certbot-nginx && \
     rm -rf /var/cache/apk/* && mkdir -p /run/nginx

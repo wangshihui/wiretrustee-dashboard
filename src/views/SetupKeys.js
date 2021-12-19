@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {useAuth0, withAuthenticationRequired} from "@auth0/auth0-react";
+// import {useAuth0, withAuthenticationRequired} from "@auth0/auth0-react";
 import Loading from "../components/Loading";
 import {formatDate, timeAgo} from "../utils/common";
 import {createSetupKey, getSetupKeys, revokeSetupKey} from "../api/ManagementAPI";
@@ -11,7 +11,7 @@ import NewSetupKeyDialog from "../components/NewSetupKeyDialog";
 
 
 export const SetupKeysComponent = () => {
-
+        const    getAccessTokenSilently=()=>{}
         const [setupKeys, setSetupKeys] = useState([])
         const [loading, setLoading] = useState(true)
         const [error, setError] = useState(null)
@@ -35,10 +35,9 @@ export const SetupKeysComponent = () => {
             }
             setShowNewKeyDialog(false)
         }
-
-        const {
-            getAccessTokenSilently,
-        } = useAuth0();
+        // const {
+        //     getAccessTokenSilently,
+        // } = useAuth0();
 
         const handleError = error => {
             console.error('Error to fetch data:', error);
@@ -224,8 +223,9 @@ export const SetupKeysComponent = () => {
     }
 ;
 
-export default withAuthenticationRequired(SetupKeysComponent,
-    {
-        onRedirecting: () => <Loading/>,
-    }
-);
+// export default withAuthenticationRequired(SetupKeysComponent,
+//     {
+//         onRedirecting: () => <Loading/>,
+//     }
+// );
+export default SetupKeysComponent;

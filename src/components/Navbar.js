@@ -3,7 +3,7 @@ import {Link, NavLink} from 'react-router-dom';
 import logo from "../assets/logo.png";
 import {Disclosure, Menu, Transition} from '@headlessui/react'
 import {MenuIcon, XIcon} from '@heroicons/react/outline'
-import {useAuth0} from "@auth0/auth0-react";
+// import {useAuth0} from "@auth0/auth0-react";
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
@@ -11,11 +11,20 @@ function classNames(...classes) {
 
 const Navbar = ({toggle}) => {
 
+    // const {
+    //     user,
+    //     isAuthenticated,
+    //     logout,
+    // } = useAuth0();
     const {
         user,
         isAuthenticated,
         logout,
-    } = useAuth0();
+    } = {
+        user:{},
+        isAuthenticated:true,
+        logout: ()=>{console.log("do logout............")}
+    };
 
     const logoutWithRedirect = () =>
         logout({

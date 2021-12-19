@@ -21,3 +21,6 @@ docker run -d --rm -p 80:80 -p 443:443 \
 * ```NGINX_SSL_PORT``` Changes the port that Nginx listens to. Defaults to ```443```
 * ```LETSENCRYPT_DOMAIN``` Enables Certbot`s client execution for the specified domain. Defaults to ```none```
 * ```LETSENCRYPT_EMAIL``` Email used in Certbot`s client execution to register the certificate request. Defaults to ```example@local```
+
+
+docker build -f docker/Dockerfile -t  139.198.26.42:5000/wiretrustee/dashboard:main .

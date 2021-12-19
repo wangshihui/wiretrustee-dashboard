@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {withAuthenticationRequired} from "@auth0/auth0-react";
+// import {withAuthenticationRequired} from "@auth0/auth0-react";
 import Loading from "../components/Loading";
 
 
@@ -51,9 +51,10 @@ export const AccessControlComponent = () => {
         );
     }
 ;
-
-export default withAuthenticationRequired(AccessControlComponent,
-    {
-        onRedirecting: () => <Loading/>,
-    }
-);
+//
+// export default withAuthenticationRequired(AccessControlComponent,
+//     {
+//         onRedirecting: () => <Loading/>,
+//     }
+// );
+export default AccessControlComponent;

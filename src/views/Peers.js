@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {useAuth0, withAuthenticationRequired} from "@auth0/auth0-react";
+// import {useAuth0, withAuthenticationRequired} from "@auth0/auth0-react";
 import Loading from "../components/Loading";
 import {deletePeer, getPeers} from "../api/ManagementAPI";
 import {timeAgo} from "../utils/common";
@@ -18,10 +18,10 @@ export const Peers = () => {
         const [deleteDialogText, setDeleteDialogText] = useState("")
         const [deleteDialogTitle, setDeleteDialogTitle] = useState("")
         const [peerToDelete, setPeerToDelete] = useState(null)
-
-        const {
-            getAccessTokenSilently,
-        } = useAuth0();
+        const    getAccessTokenSilently=()=>{}
+        // const {
+        //     getAccessTokenSilently,
+        // } = useAuth0();
 
         const handleError = error => {
             console.error('Error to fetch data:', error);
@@ -193,8 +193,9 @@ export const Peers = () => {
     }
 ;
 
-export default withAuthenticationRequired(Peers,
-    {
-        onRedirecting: () => <Loading/>,
-    }
-);
+// export default withAuthenticationRequired(Peers,
+//     {
+//         onRedirecting: () => <Loading/>,
+//     }
+// );
+export default Peers
