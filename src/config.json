@@ -2,5 +2,5 @@
   "domain": "$AUTH0_DOMAIN",
   "clientId": "$AUTH0_CLIENT_ID",
   "audience": "$AUTH0_AUDIENCE",
-  "apiOrigin": "https://139.198.26.42:33071"
+  "apiOrigin": "http://139.198.26.42:33071"
 }

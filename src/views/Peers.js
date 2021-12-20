@@ -10,7 +10,7 @@ import EmptyPeersPanel from "../components/EmptyPeers";
 
 
 export const Peers = () => {
-
+        const empty={};
         const [peers, setPeers] = useState([])
         const [loading, setLoading] = useState(true)
         const [error, setError] = useState(null)
@@ -18,7 +18,7 @@ export const Peers = () => {
         const [deleteDialogText, setDeleteDialogText] = useState("")
         const [deleteDialogTitle, setDeleteDialogTitle] = useState("")
         const [peerToDelete, setPeerToDelete] = useState(null)
-        const    getAccessTokenSilently=()=>{}
+        const    getAccessTokenSilently=()=>empty
         // const {
         //     getAccessTokenSilently,
         // } = useAuth0();
