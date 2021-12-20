@@ -18,6 +18,12 @@ COPY docker/init_react_envs.sh /usr/local/init_react_envs.sh
 RUN chmod +x /usr/local/init_cert.sh && rm /etc/crontabs/root
 RUN chmod +x /usr/local/init_react_envs.sh
 
+RUN sed -i 's/\r//g'  /etc/nginx/http.d/default.conf
+RUN sed -i 's/\r//g'  /etc/supervisord.conf
+RUN sed -i 's/\r//g'  /etc/nginx/nginx.conf
+RUN sed -i 's/\r//g'  /usr/local/init_cert.sh
+RUN sed -i 's/\r//g'  /usr/local/init_react_envs.sh
+
 # configure supervisor
 COPY docker/supervisord.conf /etc/supervisord.conf
 # copy build files

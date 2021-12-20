@@ -81,7 +81,7 @@ export const SetupKeysComponent = () => {
 
         useEffect(() => {
             refresh()
-        }, [getAccessTokenSilently])
+        }, ["1"])
 
         return (
             <>

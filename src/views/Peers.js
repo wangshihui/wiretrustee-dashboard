@@ -64,12 +64,15 @@ export const Peers = () => {
         }
 
 
+        // useEffect(() => {
+        //     refresh()
+        // }, [getAccessTokenSilently])
+
         useEffect(() => {
             refresh()
-        }, [getAccessTokenSilently])
+        },["1"])
 
         return (
-            <>
                 <div className="py-10">
                     <header>
                         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -188,7 +191,6 @@ export const Peers = () => {
                         </div>
                     </main>
                 </div>
-            </>
         );
     }
 ;

@@ -21,13 +21,19 @@ export const AddPeerComponent = () => {
             setLoading(false)
             setError(error);
         };
-
+        //
+        // useEffect(() => {
+        //     getSetupKeys(getAccessTokenSilently)
+        //         .then(responseData => setSetupKeys(responseData))
+        //         .then(() => setLoading(false))
+        //         .catch(error => handleError(error))
+        // }, [getAccessTokenSilently])
         useEffect(() => {
             getSetupKeys(getAccessTokenSilently)
                 .then(responseData => setSetupKeys(responseData))
                 .then(() => setLoading(false))
                 .catch(error => handleError(error))
-        }, [getAccessTokenSilently])
+        },["1"])
 
         return (
 
