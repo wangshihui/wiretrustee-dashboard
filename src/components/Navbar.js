@@ -103,6 +103,15 @@ const Navbar = ({toggle}) => {
                                         </NavLink>
                                     )}
 
+                                        <NavLink
+                                            to="/login"
+                                            activeClassName="border-indigo-500 text-gray-900 border-b-2"
+                                            className="border-indigo-500 text-gray-600 inline-flex items-center px-1 pt-1 text-m font-medium font-mono"
+                                        >
+                                            login
+                                        </NavLink>
+                                    )
+
                                 </div>
                             </div>
                             <div className="hidden sm:ml-6 sm:flex sm:items-center">

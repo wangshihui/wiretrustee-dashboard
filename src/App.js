@@ -9,6 +9,7 @@ import SetupKeys from "./views/SetupKeys";
 import AddPeer from "./views/AddPeer";
 import AccessControl from "./views/AccessControl";
 import Activity from "./views/Activity";
+import Login from "./views/Login";
 
 function App() {
 
@@ -82,6 +83,7 @@ function App() {
                             }}
                         />
                         <Route path='/peers' exact component={Peers}/>
+                        <Route path='/login' exact component={Login}/>
                         <Route path="/add-peer" component={AddPeer}/>
                         <Route path="/setup-keys" component={SetupKeys}/>
                         <Route path="/acls" component={AccessControl}/>
