@@ -10,6 +10,9 @@ export const callApi = async (method, headers, body, getAccessTokenSilently, end
     }
     // headers.Authorization = `Bearer ${token}`
     var userName = window.localStorage.getItem("wt_user")
+    if(!userName){
+        userName=""
+    }
     console.log("get user from local "+userName)
     const requestOptions = {
         method: method,
