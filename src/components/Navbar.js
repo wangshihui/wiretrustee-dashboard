@@ -110,7 +110,6 @@ const Navbar = ({toggle}) => {
                                         >
                                             login
                                         </NavLink>
-                                    )
 
                                 </div>
                             </div>

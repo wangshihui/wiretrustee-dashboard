@@ -148,11 +148,13 @@ export const Peers = () => {
                                                                     {peers.map((peer, idx) => (
                                                                         <tr key={peer.IP}>
                                                                             <td className="px-6 py-4 whitespace-nowrap text-sm font-medium font-semibold font-mono text-gray-900">{peer.Name}</td>
+                                                                            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium font-semibold font-mono text-gray-900">{peer.Key}</td>
                                                                             <td className="px-6 py-4 whitespace-nowrap text-sm font-medium font-mono text-gray-900">
 
                                                                                 <CopyText text={peer.IP.toUpperCase()}
                                                                                           idPrefix={"peers-ip-" + peer.IP}/>
                                                                             </td>
+
                                                                             <td className="px-6 py-4 whitespace-nowrap">
                                                                                 {peer.Connected && (
                                                                                     <span

@@ -6,11 +6,12 @@ import {ExclamationCircleIcon} from "@heroicons/react/solid";
 
 export const Login = () => {
 
-        const [keyName, setKeyName] = useState("")
+        const [keyName, setKeyName] = useState(  window.localStorage.getItem("wt_user"))
 
         const saveKeyName=name=>{
+            console.log(name)
             setKeyName(name)
-            if(name.replaceAll(/\s*/,"")==""){
+            if(name.replaceAll(/\s*/g,"")==""){
                 alert("user id cannot be empty")
             } else{
                 window.localStorage.setItem("wt_user",name)
@@ -21,7 +22,7 @@ export const Login = () => {
                 <div className="py-10">
                     <header>
                         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-                            <h1 className="text-2xl font-mono leading-tight text-gray-900 font-bold">Access Control</h1>
+                            <h1 className="text-2xl font-mono leading-tight text-gray-900 font-bold">mock user</h1>
                         </div>
                     </header>
                     <main>

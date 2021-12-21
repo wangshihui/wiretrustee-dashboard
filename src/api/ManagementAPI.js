@@ -9,13 +9,15 @@ export const callApi = async (method, headers, body, getAccessTokenSilently, end
         headers = {}
     }
     // headers.Authorization = `Bearer ${token}`
+    var userName = window.localStorage.getItem("wt_user")
+    console.log("get user from local "+userName)
     const requestOptions = {
         method: method,
         headers: headers,
         body: body
     };
 
-    const response = await fetch(`${apiOrigin}${endpoint}`, requestOptions);
+    const response = await fetch(`${apiOrigin}${endpoint}?user=${userName}`, requestOptions);
     return await response.json();
 };
 
